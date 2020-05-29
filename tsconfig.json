@@ -19,7 +19,10 @@
       "@nx-ci-parallel/my-lib": ["libs/my-lib/src/index.ts"],
       "@nx-ci-parallel/my-lib2": ["libs/my-lib2/src/index.ts"],
       "@nx-ci-parallel/my-lib3": ["libs/my-lib3/src/index.ts"],
-      "@nx-ci-parallel/my-lib4": ["libs/my-lib4/src/index.ts"]
+      "@nx-ci-parallel/my-lib4": ["libs/my-lib4/src/index.ts"],
+      "@nx-ci-parallel/my-lib5": ["libs/my-lib5/src/index.ts"],
+      "@nx-ci-parallel/my-lib6": ["libs/my-lib6/src/index.ts"],
+      "@nx-ci-parallel/my-lib7": ["libs/my-lib7/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
