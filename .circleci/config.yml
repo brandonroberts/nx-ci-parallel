@@ -32,21 +32,14 @@ jobs:
       #     keys:
       #       - *cache_key
       - run: yarn
-      - run: yarn nx g lib my-lib8
-      - run: yarn nx g lib my-lib9
-      - run: yarn nx g lib my-lib10
       - run:
           name: Build all packages
-          command: yarn affected:test --parallel --skip-nx-cache
+          command: yarn affected:test --all --parallel
 
 workflows:
   version: 2
   build-test-deploy:
     jobs:
-      - install:
-          filters:
-            tags:
-              only: /.*/
       - build-all:
           # requires:
           #   - install
