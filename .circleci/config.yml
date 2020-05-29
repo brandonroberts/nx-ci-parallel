@@ -31,12 +31,10 @@ jobs:
       # - restore_cache:
       #     keys:
       #       - *cache_key
-
+      - run: yarn
       - run:
           name: Build all packages
-          command: 
-              - run: yarn
-              - run: yarn build
+          command: yarn build
 
 workflows:
   version: 2
