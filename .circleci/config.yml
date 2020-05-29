@@ -23,18 +23,18 @@ jobs:
           paths:
             - node_modules
 
-  test-affected:
+  build-all:
     <<: *run_in_node
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - *cache_key
+      # - restore_cache:
+      #     keys:
+      #       - *cache_key
 
       - run:
-          name: Run Unit Tests
-          command: yarn nx run-many --target=build --all --parallel
+          name: Build all packages
+          command: yarn build
 
 workflows:
   version: 2
@@ -44,9 +44,9 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - test-affected:
-          requires:
-            - install
+      - build-all:
+          # requires:
+          #   - install
           filters:
             tags:
               only: /.*/
