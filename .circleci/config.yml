@@ -34,7 +34,9 @@ jobs:
 
       - run:
           name: Build all packages
-          command: yarn build
+          command: 
+              - run: yarn
+              - run: yarn build
 
 workflows:
   version: 2
