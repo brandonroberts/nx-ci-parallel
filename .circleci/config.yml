@@ -32,9 +32,9 @@ jobs:
       #     keys:
       #       - *cache_key
       - run: yarn
-      - run: yarn nx g lib my-lib5
-      - run: yarn nx g lib my-lib6
-      - run: yarn nx g lib my-lib7
+      - run: yarn nx g lib my-lib8
+      - run: yarn nx g lib my-lib9
+      - run: yarn nx g lib my-lib10
       - run:
           name: Build all packages
           command: yarn affected:test --parallel --skip-nx-cache
