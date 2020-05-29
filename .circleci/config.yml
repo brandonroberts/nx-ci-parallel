@@ -34,7 +34,7 @@ jobs:
 
       - run:
           name: Run Unit Tests
-          command: yarn nx run-many --target=test --all --parallel
+          command: yarn nx run-many --target=build --all --parallel
 
 workflows:
   version: 2
