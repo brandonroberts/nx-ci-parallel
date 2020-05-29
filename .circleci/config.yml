@@ -34,7 +34,7 @@ jobs:
       - run: yarn
       - run:
           name: Build all packages
-          command: yarn build
+          command: yarn affected:test --base=master --head=b0a0f62 --parallel
 
 workflows:
   version: 2
