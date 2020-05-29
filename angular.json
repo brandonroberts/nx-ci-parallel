@@ -156,6 +156,126 @@
         }
       },
       "schematics": {}
+    },
+    "my-lib2": {
+      "projectType": "library",
+      "root": "libs/my-lib2",
+      "sourceRoot": "libs/my-lib2/src",
+      "prefix": "nx-ci-parallel",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/my-lib2/tsconfig.lib.json",
+            "project": "libs/my-lib2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/my-lib2/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/my-lib2/tsconfig.lib.json",
+              "libs/my-lib2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/my-lib2/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/my-lib2/jest.config.js",
+            "tsConfig": "libs/my-lib2/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/my-lib2/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "my-lib3": {
+      "projectType": "library",
+      "root": "libs/my-lib3",
+      "sourceRoot": "libs/my-lib3/src",
+      "prefix": "nx-ci-parallel",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/my-lib3/tsconfig.lib.json",
+            "project": "libs/my-lib3/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/my-lib3/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/my-lib3/tsconfig.lib.json",
+              "libs/my-lib3/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/my-lib3/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/my-lib3/jest.config.js",
+            "tsConfig": "libs/my-lib3/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/my-lib3/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "my-lib4": {
+      "projectType": "library",
+      "root": "libs/my-lib4",
+      "sourceRoot": "libs/my-lib4/src",
+      "prefix": "nx-ci-parallel",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/my-lib4/tsconfig.lib.json",
+            "project": "libs/my-lib4/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/my-lib4/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/my-lib4/tsconfig.lib.json",
+              "libs/my-lib4/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/my-lib4/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/my-lib4/jest.config.js",
+            "tsConfig": "libs/my-lib4/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/my-lib4/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
