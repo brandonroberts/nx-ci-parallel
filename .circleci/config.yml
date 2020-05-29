@@ -1,0 +1,52 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2.1
+
+var_1: &cache_key yarn-cache-{{ checksum "yarn.lock" }}-0.12.11
+var_2: &run_in_node
+  docker:
+    - image: circleci/node:12.9.1
+
+jobs:
+  install:
+    <<: *run_in_node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *cache_key
+      - run: yarn --frozen-lockfile --non-interactive
+      - save_cache:
+          key: *cache_key
+          paths:
+            - node_modules
+
+  test-affected:
+    <<: *run_in_node
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - *cache_key
+
+      - run:
+          name: Run Unit Tests
+          command: yarn nx run-many --target=test --all --parallel
+
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - install:
+          filters:
+            tags:
+              only: /.*/
+      - test-affected:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
